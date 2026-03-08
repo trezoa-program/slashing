@@ -1,0 +1,48 @@
+[package]
+name = "trezoa-slashing-cli"
+version = "1.0.0"
+description = "Trezoa Program Library Slashing Command-line Utility"
+authors = ["Trezoa-team Maintainers <maintainers@trezoa.xyz>"]
+repository = "https://github.com/trezoa-program/single-pool"
+license = "Apache-2.0"
+edition = "2021"
+
+[dependencies]
+tokio = "1.47"
+clap = { version = "3.2.23", features = ["derive"] }
+console = "0.16.0"
+bincode = "1.3.1"
+bytemuck = "1.23.2"
+serde = "1.0.217"
+serde_derive = "1.0.103"
+serde_json = "1.0.142"
+serde_with = "3.14.0"
+trezoa-account-decoder = "2.3.4"
+trezoa-clap-v3-utils = "2.3.4"
+trezoa-cli-config = "2.3.4"
+trezoa-cli-output = "2.3.4"
+trezoa-client = "2.3.4"
+futures = "0.3.3"
+trezoa-logger = "3.0.0"
+trezoa-ledger = "2.2.0"
+trezoa-system-interface = "1.0.0"
+tpl-pod = "0.6.0"
+trezoa-remote-wallet = "2.3.4"
+trezoa-sdk = "2.2.1"
+trezoa-transaction-status = "2.3.4"
+tpl-token = { version = "8.0", features = ["no-entrypoint"] }
+lazy_static = "1.4.0"
+trezoa-slashing-program = { version = "1.0.0", path = "../../program", features = [
+  "no-entrypoint",
+] }
+tpl-record = "0.3.0"
+
+[dev-dependencies]
+trezoa-test-validator = "2.3.4"
+serial_test = "3.2.0"
+test-case = "3.3"
+tempfile = "3.20.0"
+
+[[bin]]
+name = "tpl-slashing"
+path = "src/main.rs"
